@@ -1,0 +1,40 @@
+{
+  "isDev": true,
+  "server": {
+    "port": 8889,
+    "/* secure */": "/* whether this connects via https */",
+    "secure": true,
+    "key": "config/sslcerts/key.pem",
+    "cert": "config/sslcerts/cert.pem",
+    "password": null,
+	"pingTimeout" : 10000,
+	"pingInterval" : 4800
+  },
+  "rooms": {
+    "/* maxClients */": "/* maximum number of clients per room. 0 = no limit */",
+    "maxClients": 0
+  },
+  "stunservers": [
+    {
+      "url": "stun:stun.l.google.com:19302"
+    }
+  ],
+  
+ "turnservers": [
+ {
+ "urls": [ "turn:67.220.183.67:3478"],
+ "user": "test_user",
+ "credential": "medialooks9"
+ }
+],
+  "janusservers": [
+    {
+      "url": "ws://192.168.0.145:8188"
+    }
+  ],
+    "wowzaservers": [
+    {
+      "url": "wss://localhost/webrtc-session.json"
+    }
+  ]
+}

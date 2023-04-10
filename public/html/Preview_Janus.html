@@ -1,0 +1,49 @@
+﻿<!DOCTYPE html>
+<html lang="en-IE">
+<head>
+    <meta charset="utf-8" />
+    <title>WebRTC preview test page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/style.css" />
+</head>
+<body>
+    <figure data-fullscreen="false">
+        <div id="videoContainer">
+            <video id="stub"></video>
+        </div>
+        <div id="additional-controls" class="additcontrols">
+            <table id="tableconnection">
+                <tr align=left style='padding:0'>
+                    <td><button id="connecttosigserv" type="button" data-state="disabled">Connect</button></td>
+                    <td><button id="connecttopeer" type="button" data-state="disabled">Connect</button></td>
+                    <td width="85%">
+                        &nbsp;Medialooks SDK |
+                        <a href="https://www.medialooks.com" target="_blank">
+                            https://www.medialooks.com
+                        </a>
+                    </td>
+                    <td class="namecolumn2">Audio channels:</td>
+                    <td>
+                        <select id="channels-options" class="camera-options">
+                            <option value="1">Select channels</option>
+                        </select>
+                    </td>
+                    <td>
+                        <!-- Safary doesn't supports datalist element -->
+                        <input type="text" id="channels-other">
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <figcaption>
+
+        </figcaption>
+    </figure>
+    <script src="/js/jquery.min.js"></script>
+
+    <script src="/js/simplewebrtc-with-adapter.bundle_JANUS.js"></script>
+    <script src="/js/simplewebrtc-mf.js"></script>
+    <script src="/js/common.js"></script>
+    <script src="/js/preview.js"></script>
+</body>
+</html>

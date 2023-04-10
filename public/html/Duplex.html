@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en-IE">
+<head>
+    <meta charset="utf-8" />
+    <title>Duplex HTML - Medialooks </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/data.css" />
+</head>
+<body>
+<figure>
+        <div id="selfeeContainer">
+            <video loop autoplay controls="true" width='100%' height='100%' id="selfee"></video>
+        </div>
+        <div id="additional-controls" class="additcontrols streamer">
+            <table id="table_camera" vertical-align='top'>
+                <tr>
+                    <td>Camera:</td>
+					<td colspan="3">
+                        <select id="input-options" class="camera-options">
+                            <option value="">Select camera</option>
+                        </select>
+                    </td>
+				</tr>
+				<tr>
+                    <td>Resolution:</td>
+					<td>
+                        <select id="resolution-options" class="camera-options">
+                            <option value="default">default</option>
+                            <option value="320240">320х240</option>
+                            <option value="640360">640х360</option>
+                            <option value="640480">640х480</option>
+                            <option value="1280720">1280х720</option>
+                            <option value="19201080">1920х1080</option>
+                        </select>
+                    </td>
+                    <td>Mirroring:</td>
+					<td class="mirroring-col">
+                        <select id="mirror-options" class="camera-options">
+                            <option value="0">Disable</option>
+                            <option value="1">Enable</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+				<!-- TODO: Take default location by IP e.g. RU, Kaliningrad-->
+                    <td class="namecolumn2">Location:</td>
+                    <td><input type="text" id="location" value="Web" /></td>
+                    <td class="namecolumn2">Name:</td>
+                    <td ><input type="text" id="clientName" value=""/></td>
+                    
+                </tr>
+                <tr>
+                    <td class="namecolumn2">Video bitrate:</td>
+                    <td>
+					<!--<input type="text" id="vidBitrate" value="2M"/>-->
+						<select id="vidBitrate" value="2M" class="camera-options">
+                            <option value="1M">1Mb</option>
+							<option value="1.5M">1.5Mb</option>
+							<option value="2M">2Mb</option>
+                            <option value="2.5M">2.5Mb</option>
+							<option value="3.5M">3.5Mb</option>
+                            <option value="5M">5Mb</option>
+                            <option value="7.5M">7.5Mb</option>
+                            <option value="10M">10Mb</option>
+							<option value="10M">15Mb</option>
+                        </select>
+					</td>
+					<td class="namecolumn2">Codec:</td>
+                    <td>
+                        <select id="vidEncoder" class="camera-options">
+                            <option value="VP9">VP9</option>
+							<option value="h264" selected>h264</option>
+                            <!--<option value="VP8">VP8</option> - temp disabled as Crashed WebRTC>--> 
+                        </select>
+                    </td>
+			    </tr>
+				<tr>
+				<td colspan='3'/>
+				   <td alight='right'>
+                        <button id="upd_button" type="button" data-state="stopped">Update</button>
+                   </td>
+				</tr>
+            </table>
+        </div>
+    </figure>
+    <figure data-fullscreen="false">
+        <div id="videoContainer">
+            <video id="stub"></video>
+        </div>
+        <div id="additional-controls" class="additcontrols">
+			<table id="tableconnection">
+                <tr align=left style='padding:0'>
+                	<td><button id="connecttosigserv" type="button" data-state="disabled">Connect</button></td>
+					<td><button id="connecttopeer" type="button" data-state="disabled" >Connect</button></td>
+                    <td width="85%">
+                        &nbsp;Medialooks  | 
+                        <a href="https://www.medialooks.com/" target="_blank">
+                            https://www.medialooks.com/
+                        </a>
+                    </td>
+                    <td class="namecolumn2">Audio channels:</td>
+                    <td>
+                        <select id="channels-options" class="camera-options">
+                            <option value="0">Select channels</option>
+                        </select>
+                    </td>
+                    <td>
+                        <!-- Safary doesn't supports datalist element -->
+                        <input type="text" id="channels-other">
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </figure>
+    
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/simplewebrtc-with-adapter.bundle.js"></script>
+    <script src="/js/simplewebrtc-mf.js"></script>
+    <script src="/js/duplex/common.js"></script>
+    <script src="/js/duplex/channels.js"></script>
+    <script src="/js/duplex/sender.js"></script>
+    <script src="/js/duplex/receiver.js"></script>
+    <script src="/js/duplex/duplex.js"></script>
+</body>
+</html>

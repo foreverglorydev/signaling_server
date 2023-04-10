@@ -1,0 +1,124 @@
+<!DOCTYPE html> 
+<html lang="en-IE"> 
+    <head> 
+        <meta charset="utf-8"/> 
+        <title>Medialooks Web Streamer Sample</title>         
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/> 
+        <link rel="stylesheet" href="/css/style.css"/> 
+    </head>     
+    <body> 
+        <figure> 
+            <div id="videoContainer"> 
+                <video loop autoplay controls="true" width='100%' height='100%' id="localvid"></video>                 
+            </div>             
+            <div id="additional-controls" class="additcontrols streamer" style="background-image: linear-gradient(90deg, rgb(50, 56, 87) 36.0656%, rgb(50, 56, 87) 36.0656%);"> 
+                <table id="tableconnection"> 
+                    <tr> 
+                        <td rowspan="2"> 
+                            <button id="mainButton" type="button" data-state="stopped">Start</button>                             
+                        </td>                         
+                        <td colspan="2">Cámara</td> 
+                        <td>Resolución</td> 
+                        <td>Espejo</td> 
+                    </tr>                     
+                    <tr> 
+                        <td colspan="2"> 
+                            <select id="input-options" class="camera-options"> 
+                                <option value="">Select camera</option>                                 
+                            </select>                             
+                        </td>                         
+                        <td> 
+                            <select id="resolution-options" class="camera-options"> 
+                                <option value="default">default</option>                                 
+                                <option value="320240">320х240</option>                                 
+                                <option value="640360">640х360</option>                                 
+                                <option value="640480">640х480</option>                                 
+                                <option value="1280720">1280х720</option>                                 
+                                <option value="19201080">1920х1080</option>                                 
+                            </select>                             
+                        </td>                         
+                        <td class="mirroring-col"> 
+                            <select id="mirror-options" class="camera-options"> 
+                                <option value="0">Disable</option>                                 
+                                <option value="1">Enable</option>                                 
+                            </select>                             
+                        </td>                         
+                    </tr>                     
+                    <tr> 
+                        <td class="namecolumn2">
+                            <!-- Sala: -->
+                        </td> 
+                        <td colspan="3">
+                            <!-- <input type="text" id="publisherId" value="frankGarcia"/> -->
+                        </td>                         
+                        <td class="buttoncolumn">
+                            <button id="ConnectStatus" type="button" data-state="disabled">Conectar</button>
+                        </td>                         
+                    </tr>                     
+                    <tr> 
+                        <td class="namecolumn1">Link acceso:</td> 
+                        <td colspan="3">
+                            <input type="text" id="accesslink" value=""/>
+                        </td>                         
+                    </tr>                     
+                    <tr> 
+                        <td class="namecolumn2">Nombre:</td> 
+                        <td>
+                            <input type="text" id="clientName" value=""/>
+                        </td>                         
+                        <td></td> 
+                    </tr>                     
+                    <tr> 
+                        <td class="namecolumn2">Video bitrate:</td> 
+                        <td>
+                            <input type="text" id="vidBitrate" value="2M"/>
+                        </td>                         
+                        <td class="namecolumn2">Audio bitrate:</td> 
+                        <td>
+                            <input type="text" id="audBitrate" value="128K"/>
+                        </td>                         
+                    </tr>                     
+                    <tr> 
+                        <td class="namecolumn2">Video encoder:</td> 
+                        <td> 
+                            <select id="vidEncoder" class="camera-options"> 
+                                <option value="h264">h264</option>                                 
+                                <option value="VP8">VP8</option>                                 
+                                <option value="VP9">VP9</option>                                 
+                            </select>                             
+                        </td>                         
+                        <td></td> 
+                        <td></td> 
+                        <td></td> 
+                    </tr>                     
+                    <tr> 
+                        <td>Recibir mensajes</td> 
+                        <td colspan="3">
+                            <textarea id="received" style="background-image: linear-gradient(90deg, rgb(131, 119, 119) 34.7541%, rgb(131, 119, 119) 34.7541%);"></textarea>
+                        </td>                         
+                        <td></td> 
+                    </tr>
+                    <tr> 
+                        <td>Enviar mensaje:</td> 
+                        <td colspan="3">
+                            <input type="text" id="message" value="" placeholder="Enviar mensaje"/>
+                        </td>                         
+                        <td>
+                            <button id="sendmessage" type="button" data-state="message" title="Send message to peer">Enviar</button>
+                        </td>                         
+                    </tr>                     
+                </table>                 
+            </div>             
+            <figcaption>&nbsp;Streaming VideomaT mpro WEB1| 
+                <a href="https://www.audiform.com" target="_blank">https://www.audiform.com</a>
+            </figcaption>             
+        </figure>         
+        <script src="/js/jquery.min.js"></script>         
+        <script src="/js/simplewebrtc-with-adapter.bundle.js"></script>         
+        <script src="/js/simplewebrtc-mf.js"></script>         
+        <script src="/js/common.js"></script>         
+        <script src="/js/janus.js"></script>         
+        <script src="/js/streamer.js"></script>         
+        <script src="https://webrtc.github.io/adapter/adapter-latest.js"></script>
+    </body>     
+</html>

@@ -1,0 +1,5 @@
+E:\Git samples\Signaling Server\Test Server\obj\Debug\Test Signaling.njsproj.CoreCompileInputs.cache
+E:\Git samples\Signaling Server\Test Server\bin\Microsoft.NodejsTools.WebRole.dll
+E:\Git samples\Signaling\Test Server\obj\Debug\Test Signaling.njsproj.CoreCompileInputs.cache
+E:\Git samples\Signaling\Test Server\bin\Microsoft.NodejsTools.WebRole.dll
+E:\Git samples\Signaling\Test Server\obj\Debug\Test Signaling.njsprojAssemblyReference.cache

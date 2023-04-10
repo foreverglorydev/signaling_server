@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8"/>
+        <title>WebRTC Chat</title>
+        <script src="https://cdn.jsdelivr.net/npm/simplewebrtc/latest-v3.js"></script>
+    </head>
+    <body>
+        <h1>WebRTC Chat</h1>
+        <div>
+            <textarea id="receive" rows="10" cols="50" readonly></textarea>
+        </div>
+        <div>
+            <textarea id="send" rows="3" cols="50"></textarea>
+            <button id="send-btn">Enviar</button>
+        </div>
+        <script>
+      const webrtc = new SimpleWebRTC({
+        url: 'https://153.92.210.19:8889/',
+        media: { video: false, audio: false },
+        receiveMedia: { offerToReceiveAudio: false, offerToReceiveVideo: false },
+        roomName: 'salavideomat',
+        userName: 'usuarioinvitado'
+      });
+
+      webrtc.connection.on('message', (data) => {
+        if (data.type === 'chat' && data.payload) {
+          const message = data.payload.message;
+          const sender = data.payload.sender;
+          const receiveTextarea = document.getElementById('receive');
+          receiveTextarea.value += `${sender}: ${message}\n`;
+        }
+      });
+
+      const sendTextarea = document.getElementById('send');
+      const sendBtn = document.getElementById('send-btn');
+      sendBtn.addEventListener('click', () => {
+        const message = sendTextarea.value.trim();
+        if (message !== '') {
+          webrtc.sendToAll('chat', { message, sender: 'usuarioinvitado' });
+          sendTextarea.value = '';
+        }
+      });
+    </script>
+    </body>
+</html>

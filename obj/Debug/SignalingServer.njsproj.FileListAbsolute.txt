@@ -1,0 +1,2 @@
+E:\Git samples\Signaling Server\bin\Microsoft.NodejsTools.WebRole.dll
+E:\Git samples\Signaling Server\obj\Debug\SignalingServer.njsproj.CoreCompileInputs.cache
